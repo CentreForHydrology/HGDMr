@@ -1,0 +1,31 @@
+Type: Package
+Package: HGDMr
+Title: Hysteretic and Gatekeeping Depressions Model
+Version: 0.0.1
+Date: 2023-04-28
+Authors@R: c(person("Kevin", "Shook", 
+              email = "kevin.shook@usask.ca", 
+              role = c("cre", "aut"))
+             )                
+Author: Kevin Shook [cre, aut]
+Maintainer: Kevin Shook <kevin.shook@usask.ca>
+Description: Implementation of HGDM. The intent is to estimate discharge depths and connected/contributing fractions. No attempt is made to route flows in time.
+License: AGPL-3 
+URL: https://github.com/KevinShook/HGDMr
+Depends: 
+    R (>= 4.0.0)
+Imports: 
+    timeDate,
+    stringr,
+    ggplot2,
+    stats,
+    dplyr
+Suggests: 
+    knitr,
+    testthat, 
+    rmarkdown,
+    readr
+VignetteBuilder: knitr
+LazyData: true
+Encoding: UTF-8
+RoxygenNote: 7.2.3
