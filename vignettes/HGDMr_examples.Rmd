@@ -1,5 +1,5 @@
 ---
-title: "HGDMr | Hysteretic and Gatekeeping Depressions Model"
+title: "HGDMr_examples"
 author: "Kevin Shook"
 date: "`r Sys.Date()`"
 output: 
@@ -7,7 +7,7 @@ output:
     toc: true
     number_sections: yes
 vignette: >
-  %\VignetteIndexEntry{HGDMr | Hysteretic and Gatekeeping Depressions Model}
+  %\VignetteIndexEntry{HGDMr_examples}
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{knitr::rmarkdown}
   header-includes:
@@ -84,7 +84,7 @@ hysteresis worked well in a model of a depression-dominated prairie
 basin.
 
 ![HGDM relationship between water storage and connected/contributing
-fraction](hysteresis_model.png){#fig-hyseresis width="5cm"}
+fraction](hysteresis_model.png){#fig-hyseresis width="10cm"}
 
 HGDM uses a single "meta" depression to model all the small depressions,
 using the hysteretic relationship plotted in @fig-hystereis. An
@@ -107,7 +107,7 @@ hysteretic relationship between water storage and connected/contributing
 fraction. The region shown in white is without any depressions.
 
 ![Schematic diagram of prairie basin as modelled by
-HGDM](basin_schematic.png){#fig-schematic width="5cm"}
+HGDM](basin_schematic.png){#fig-schematic width="10cm"}
 
 The fluxes of water among the landscape units are shown in
 @fig-HGDMflowchart. The upland runoff is partitioned among the "meta"
@@ -116,7 +116,7 @@ areas without depressions. The outflows from the "meta" depression are
 divided among the flows to the largest depression (if it exists), and
 directly to the outlet.
 
-![HGDM flowchart](HGDM_flowchart.png){#fig-HGDMflowchart width="5cm"}
+![HGDM flowchart](HGDM_flowchart.png){#fig-HGDMflowchart width="10cm"}
 
 # HGDM
 
@@ -142,26 +142,26 @@ Prairies and cannot give good results when forcing HGDM.
 
 The forcings required by the \pkg{HGDMr} functions are:
 
--   rainfall
+*  rainfall
 
 The depth of rain (mm) falling on the water (sloughs and lake) in the
 basin. Note that this does not include the snowfall.
 
--   snowmelt
+*  snowmelt
 
 The depth of snow (mm) melting on top of the water in each interval.
 This is not the same as the snowfall, which could have occurred months
 earlier and includes the blowing snow processes as well as the energy
 balance snow melt processes.
 
--   runoff
+*  runoff
 
 This is *not* the same thing as the streamflow divided by the basin
 area. It refers to the depth of water (mm) running off the uplands
 within the basin. In other words, it is the snow melt minus the
 infiltration to the frozen soils.
 
--   evap
+*  evap
 
 This is the depth of evaporation (mm) from the water in the basin.
 
@@ -229,7 +229,7 @@ that the storage was increasing before the first time interval.
 ### Flow partitioning parameters
 
 The HGDM flow partitioning parameters split the flows among the
-destinations as shown in @fig-HGDMflowchart. The fractions can be
+destinations as shown in the flowchart. The fractions can be
 extracted using GIS and DEMs. Remember that
 
 `upland_fraction_to_small + upland_fraction_to_large + upland_fraction_to_outlet = 1`
@@ -298,12 +298,12 @@ will result in combining periods with and without rainfall.
 
 # Examples
 
-In these examplse, the parameter values are *not* based on an actual
+In these examples, the parameter values are *not* based on an actual
 location, much less the same location as the forcing data. However, they
 are typical of the type of values that might be found in the Canadian
 Prairies.
 
-## Example #1 - no large depressiom
+## Example #1 - modelling a basin without a large depressiom
 
 ### Setting parameter values
 
@@ -412,9 +412,12 @@ Plot the small (meta) depression connected/contributing fraction vs the
 depressional storage, as a fraction of the total.
 
 ```{r}
-simulation$small_depression_water_volume_fraction <- simulation$small_depression_water_depth / (max_small_depression_storage / 1000)
+simulation$small_depression_water_volume_fraction <- 
+  simulation$small_depression_water_depth / (max_small_depression_storage / 1000)
 
-p <- ggplot(simulation, aes(small_depression_water_volume_fraction, small_depression_contrib_frac)) +
+p2 <- ggplot(simulation, 
+            aes(small_depression_water_volume_fraction, 
+                small_depression_contrib_frac)) +
   geom_point() +
   xlab("Meta depression volumetric fraction") +
   ylab("Meta depression connected/contributing fraction") +
@@ -422,12 +425,15 @@ p <- ggplot(simulation, aes(small_depression_water_volume_fraction, small_depres
   xlim(0, 1) +
   ylim(0, 1) +
   geom_abline(slope = 1, intercept = 0, colour = "red")
-p
+p2
 ```
 
-## Example #2 - a large depressiom
+## Example #2 - modelling a basin with a large depressiom
 
 ### Setting parameter values
+
+In this example the large depression is set near the top of the basin, where it
+collects 25% of the small depression's outputs.
 
 ```{r}
 max_large_depression_storage <- 2000
@@ -442,7 +448,6 @@ upland_fraction_to_small <- 0.96
 upland_fraction_to_large <- 0.02
 upland_fraction_to_outlet <- 0.02
 small_fraction_to_large <- 0.25
-
 ```
 
 ```{r}
@@ -479,12 +484,16 @@ p3
 ```
 
 ```{r}
-max_water_volume <- ((max_large_depression_storage / 1000) * (large_depression_area * 1e6)) + 
+max_water_volume <- ((max_large_depression_storage / 1000) * 
+                       (large_depression_area * 1e6)) + 
   ((max_small_depression_storage / 1000) * (small_depression_area * 1e6))
 
-simulation_large_pond$total_water_volume_fraction <- (simulation_large_pond$small_depression_water_volume + simulation_large_pond$large_depression_water_volume) / max_water_volume
+simulation_large_pond$total_water_volume_fraction <-
+  (simulation_large_pond$small_depression_water_volume +
+     simulation_large_pond$large_depression_water_volume) / max_water_volume
 
-p4 <- ggplot(simulation_large_pond, aes(total_water_volume_fraction, total_contrib_frac)) +
+p4 <- ggplot(simulation_large_pond, 
+             aes(total_water_volume_fraction, total_contrib_frac)) +
   geom_point() +
   xlab("Total volumetric fraction") +
   ylab("Total connected/contributing fraction") +
@@ -493,11 +502,6 @@ p4 <- ggplot(simulation_large_pond, aes(total_water_volume_fraction, total_contr
   ylim(0, 1) 
 p4
 ```
-
-
-
-## Plotting the differences in annual peak discharges
-
 
 # References
 

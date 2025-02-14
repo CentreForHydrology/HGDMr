@@ -2,9 +2,10 @@
 
 export(HGDM)
 export(HGDM_filling_curve)
-export(add_water_to_small)
 export(area_frac)
 export(linear_hysteresis_CF)
 export(vol2area_rating)
 export(volfrac2areafrac_Clark)
 import(stringr)
+importFrom(stats,approx)
+importFrom(stats,spline)

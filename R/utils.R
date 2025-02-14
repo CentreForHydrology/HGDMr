@@ -9,7 +9,8 @@
 #' @keywords internal
 #' @author Kevin Shook
 #' @export
-#'
+#' @importFrom stats approx
+#' @importFrom stats spline
 #' @examples \dontrun{
 #' a <- vol2area_lookup(rating_curve, volume)
 #' }
