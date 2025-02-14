@@ -109,8 +109,7 @@ fraction. The region shown in white is without any depressions.
 ![Schematic diagram of prairie basin as modelled by
 HGDM](basin_schematic.png){#fig-schematic width="10cm"}
 
-The fluxes of water among the landscape units are shown in
-@fig-HGDMflowchart. The upland runoff is partitioned among the "meta"
+The fluxes of water among the landscape units are shown in the flowchart. The upland runoff is partitioned among the "meta"
 depression, the large depression and directly to the outlet, through the
 areas without depressions. The outflows from the "meta" depression are
 divided among the flows to the largest depression (if it exists), and
@@ -502,6 +501,8 @@ p4 <- ggplot(simulation_large_pond,
   ylim(0, 1) 
 p4
 ```
+
+
 
 # References
 
