@@ -62,7 +62,7 @@ to the effective fraction.}
 \item{small_fraction_to_large}{Fraction of small depression area draining into large depression.
 Governed by location of large depression in the basin.}
 
-\item{forcings}{Reauired. A data frame of time series of \code{rainfall}, \code{snowmelt},
+\item{forcings}{Required. A data frame of time series of \code{rainfall}, \code{snowmelt},
 \code{evap}, and \code{runoff}. The first variable must be either \code{date} (an
 \pkg{R} date) or \code{datetime} (a POSIXct date-time).}
 
@@ -73,13 +73,38 @@ Governed by location of large depression in the basin.}
 \item{sub_intervals}{Number of sub-intervals for solution of each time step.}
 }
 \value{
-Returns a data frame with the following values: date, 
-basin contributing fraction, basin volume fraction, large depression volume fraction,
-small depression volume fraction, small depression contributing fraction,
-net flux, runoff, discharge
+Returns a data frame. Depending on whether or not a large depression was
+specified, the data frame will have differing variables. Note that regardless of the 
+units specified for areas and volumes, all of the variables returned are in SI
+dimensions, i.e. `m` and `m\eqn{^3}{^3}/s`
+values
+
+If no large depression is specified, the returned variables are:
+
+\describe{
+\item{date or datetime}{\R date or POSIXct datetime.}
+\item{total_contrib_frac}{The connected/contributing fraction of the basin. Includes both the meta depression and the upland fraction connected to the outlet.}
+\item{total_outflow_volume}{The volume of outflow (m \eqn{^3}{^3}) in the interval.}
+\item{small_depression_contrib_frac}{The connected/contributing fraction of the meta depression.}
+\item{small_depression_water_volume}{The volume of water (m \eqn{^3}{^3}) retained in the meta depression.}
+\item{small_depression_water_depth}{The depth of water (m) retained in the meta depression.}
+\item{small_depression_water_area}{The area of water (m  \eqn{^2}{^2}) retained in the meta depression.}
+}
+
+If there is a large depression, then `total_contrib_frac` includes the effect of the large
+depression and the additional variables are also returned:
+
+\describe{
+\item{date or datetime}{\R date or POSIXct datetime.}
+\item{large_depression_contrib_frac}{The connected/contributing fraction of the large depression.}
+\item{large_depression_water_volume}{The volume of water (m \eqn{^3}{^3}) retained in the large depression.}
+\item{large_depression_water_area}{The area of water (m  \eqn{^2}{^2}) retained in the large depression.}
+}
 }
 \description{
-Applies HGDM to forcings
+Applies the Hysteretic and Gatekeeping Depressions Model to basin-scale fluxes determined
+by hydrological modelling to calculate the outflows during a given time interval. Note
+than no routing is performed.
 }
 \examples{
 \dontrun{

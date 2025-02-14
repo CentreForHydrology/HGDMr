@@ -28,3 +28,4 @@ a <- vol2area_lookup(rating_curve, volume)
 \author{
 Kevin Shook
 }
+\keyword{internal}

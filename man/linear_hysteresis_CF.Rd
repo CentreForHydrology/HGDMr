@@ -33,3 +33,7 @@ Calculates connected/contributing fraction
 cf <- linear_hysteresis_CF(current_storage = 50,
 delta_storage = 10, max_storage = 100, current_contrib_frac = 0)
 }
+\author{
+Kevin Shook
+}
+\keyword{internal}

@@ -7,6 +7,8 @@
 #' @param threshold Threshold for change in storage to set connected fraction to zero.
 #'
 #' @return Returns the updated connected/contributing fraction
+#' @keywords internal
+#' @author Kevin Shook
 #' @export
 #'
 #' @examples

@@ -20,3 +20,7 @@ Estimates total depressional water area fraction
 \examples{
 areafrac <- volfrac2areafrac_Clark(0.5, 1.2)
 }
+\author{
+Kevin Shook
+}
+\keyword{internal}

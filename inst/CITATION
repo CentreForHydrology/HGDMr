@@ -1,0 +1,27 @@
+year <- sub("-.*", "", meta$Date)
+note <- sprintf("R package version %s", meta$Version)
+
+bibentry(
+  bibtype  = "Manual",
+  title    = "HGDMr - Hysteretic and Gatekeeping Depressions Model",
+  author   = c(person(given = "Kevin", family = "Shook")
+               ),
+  year     = year,
+  note     = note,
+)
+
+
+bibentry(bibtype = "Article",
+          author   = c(person(given = c("Kevin", "Robert"), family = "Shook"),
+                       person(given = c("John", "Willard"), family = "Pomeroy")
+                       ),
+          title = "The hysteretic and gatekeeping depressions model − A new model for variable connected fractions of prairie basins",
+          journal = "Journal of Hydrology",
+          volume = "654",
+          pages = "132821",
+          url = "https://www.sciencedirect.com/science/article/pii/S0022169425001593",
+          year = "2025"
+)
+
+
+

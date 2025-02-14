@@ -72,7 +72,7 @@ basin contributing fraction, basin volume fraction, large depression volume frac
 small depression volume fraction, small depression contributing fraction
 }
 \description{
-Runs HGDM
+Runs HGDM to generate filling curves for a given basin
 }
 \examples{
 \dontrun{

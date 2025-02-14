@@ -6,7 +6,7 @@
 #' a spline can be fitted by specifying \code{method = "spline"} and any other options used by the function \code{spline}.
 #'
 #' @return Returns a scalar or vector of lake stages
-#' @importFrom stats approx spline
+#' @keywords internal
 #' @author Kevin Shook
 #' @export
 #'
@@ -32,6 +32,8 @@ vol2area_rating <- function(rating_curve, volumes, method = "linear"){
 #' @param p Exponent
 #'
 #' @return Returns the fractional water area
+#' @keywords internal
+#' @author Kevin Shook
 #' @export
 #'
 #' @examples
@@ -50,7 +52,8 @@ volfrac2areafrac_Clark <- function(volume_frac, p) {
 #'
 #' @return Returns water area fraction
 #' @export
-#'
+#' @keywords internal
+#' @author Kevin Shook
 #' @examples
 #' water_area_frac <- area_frac(1000, 2000, NULL, 1.2)
 area_frac <- function(volume, max_volume, max_area= NULL, rating_parameters) {

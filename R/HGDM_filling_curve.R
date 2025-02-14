@@ -1,7 +1,7 @@
 #' Generates filling curve from HGDM
 #'
 #' @description
-#' Runs HGDM 
+#' Runs HGDM to generate filling curves for a given basin
 #' 
 #'
 #' @param upland_area Required. Area of uplands, which drain to the outlet, 

@@ -24,3 +24,7 @@ Determines if area-volume estimation is by equation or rating
 \examples{
 water_area_frac <- area_frac(1000, 2000, NULL, 1.2)
 }
+\author{
+Kevin Shook
+}
+\keyword{internal}
