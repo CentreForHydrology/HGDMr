@@ -21,7 +21,8 @@ Suggests:
     knitr,
     testthat, 
     rmarkdown,
-    readr
+    readr,
+    ggplot2
 VignetteBuilder: knitr
 LazyData: true
 Encoding: UTF-8
