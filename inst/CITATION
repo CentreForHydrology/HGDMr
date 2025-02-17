@@ -19,7 +19,7 @@ bibentry(bibtype = "Article",
           journal = "Journal of Hydrology",
           volume = "654",
           pages = "132821",
-          url = "https://www.sciencedirect.com/science/article/pii/S0022169425001593",
+          url = "https://doi.org/10.1016/j.jhydrol.2025.132821",
           year = "2025"
 )
 
