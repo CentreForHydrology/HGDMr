@@ -15,8 +15,11 @@ the large depression is filled.
 
 The **HGDMr** function `HGDM` models both behaviours far more efficiently than previously developed models. It
 computes the constantly changing depressional storage and the net discharge flux. Note that
-the function does _not_ do any form of routing.
+the function does not do any form of routing.
 
-For more information about HGDM see Shook anbd Pomeroy (2025).
+**HGDMr** works very well with fluxes computed for Canadian Prairie basins in
+PHyDAP - Prairie Hydrology Design and Analysis Product (<https://doi.org/10.20383/102.0694>).
+
+For more information about HGDM see Shook and Pomeroy (2025):
 
 Shook, Kevin R., and John W. Pomeroy. “The Hysteretic and Gatekeeping Depressions Model - A New Model for Variable Connected Fractions of Prairie Basins.” Journal of Hydrology 654 (June 1, 2025): 132821. https://doi.org/10.1016/j.jhydrol.2025.132821.
