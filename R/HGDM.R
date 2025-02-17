@@ -222,7 +222,7 @@ HGDM <- function(upland_area = NULL,
   upland_total <- upland_fraction_to_small + upland_fraction_to_large + upland_fraction_to_outlet
   
   if (upland_total > 1) {
-    message("Total upland fraction > 1, will adjust")
+    warning("Total upland fraction > 1, will adjust fractions.")
     upland_fraction_to_small <- upland_fraction_to_small / upland_total
     upland_fraction_to_large <- upland_fraction_to_large / upland_total
     upland_fraction_to_outlet <- upland_fraction_to_outlet / upland_total
