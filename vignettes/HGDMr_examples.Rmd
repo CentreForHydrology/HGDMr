@@ -507,7 +507,7 @@ p4
 # References
 
 Shook, Kevin R., and John W. Pomeroy. “The Hysteretic and Gatekeeping
-Depressions Model − A New Model for Variable Connected Fractions of
+Depressions Model - A New Model for Variable Connected Fractions of
 Prairie Basins.” Journal of Hydrology 654 (June 1, 2025): 132821.
 <https://doi.org/10.1016/j.jhydrol.2025.132821>.
 

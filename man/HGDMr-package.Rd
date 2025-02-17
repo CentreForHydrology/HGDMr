@@ -18,7 +18,7 @@ Note that this model does not route the flows through the basin. This would requ
 the use of another \R package, such as \pkg{RHMS}, which has the function `reachRouting`.
 }
 \references{
-Shook, Kevin R., and John W. Pomeroy. “The Hysteretic and Gatekeeping Depressions Model − A New Model for Variable Connected Fractions of Prairie Basins.” Journal of Hydrology 654 (June 1, 2025): 132821. https://doi.org/10.1016/j.jhydrol.2025.132821.
+Shook, Kevin R., and John W. Pomeroy. “The Hysteretic and Gatekeeping Depressions Model - A New Model for Variable Connected Fractions of Prairie Basins.” Journal of Hydrology 654 (June 1, 2025): 132821. https://doi.org/10.1016/j.jhydrol.2025.132821.
 
 Shook, Kevin R., Zhihua He, John W. Pomeroy, Chris Spence, and Colin J. Whitfield. “A Practitioner-Oriented Regional Hydrology Data Product for Use in Site-Specific Hydraulic Applications.” Scientific Data 11, no. 1 (October 14, 2024): 1125. https://doi.org/10.1038/s41597-024-03962-1.
 

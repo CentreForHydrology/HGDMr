@@ -2,7 +2,7 @@ Type: Package
 Package: HGDMr
 Title: Hysteretic and Gatekeeping Depressions Model
 Version: 1.0.0
-Date: 2023-04-28
+Date: 2025-02-17
 Authors@R: c(person("Kevin", "Shook", 
               email = "kevin.shook@usask.ca", 
               role = c("cre", "aut"))

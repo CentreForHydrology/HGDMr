@@ -15,7 +15,7 @@ bibentry(bibtype = "Article",
           author   = c(person(given = c("Kevin", "Robert"), family = "Shook"),
                        person(given = c("John", "Willard"), family = "Pomeroy")
                        ),
-          title = "The hysteretic and gatekeeping depressions model − A new model for variable connected fractions of prairie basins",
+          title = "The hysteretic and gatekeeping depressions model - A new model for variable connected fractions of prairie basins",
           journal = "Journal of Hydrology",
           volume = "654",
           pages = "132821",
