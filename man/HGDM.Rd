@@ -107,9 +107,9 @@ by hydrological modelling to calculate the outflows during a given time interval
 than no routing is performed.
 }
 \examples{
-\dontrun{
-
-basin_area <- 1018  - 13 # km2 - basin area - lake area
+{ 
+daily_fluxes <- daily_7120951600  
+basin_area <- 100
 small_depression_frac <- 0.24
 small_depression_area <- small_depression_frac * basin_area
 large_depression_area <- 0
@@ -126,6 +126,7 @@ upland_fraction_to_large <- 0
 upland_fraction_to_outlet <- 0.02
 small_fraction_to_large <- 0
 small_p <- 1.2
+large_rating <- 1.4
 sub_intervals <- 1
 
 results <- HGDM(upland_area, 
@@ -141,7 +142,9 @@ upland_fraction_to_small,
 upland_fraction_to_large,
 upland_fraction_to_outlet,
 small_fraction_to_large,
-forcings = daily_fluxes,
-small_p)
+forcings = daily_fluxes[1:100,],
+small_p = small_p,
+large_rating = large_rating,
+sub_intervals = sub_intervals)
 }
 }

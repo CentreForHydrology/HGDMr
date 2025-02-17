@@ -66,8 +66,8 @@
 #' @import stringr
 #' @export
 #'
-#' @examples 
-#' 
+#' @examples { 
+#' daily_fluxes <- daily_7120951600  
 #' basin_area <- 100
 #' small_depression_frac <- 0.24
 #' small_depression_area <- small_depression_frac * basin_area
