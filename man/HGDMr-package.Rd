@@ -31,7 +31,7 @@ Shook, Kevin, John W Pomeroy, Christopher Spence, and Lyle Boychuk. “Storage D
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/KevinShook/HGDMr}
+  \item \url{https://github.com/CentreForHydrology/HGDMr}
 }
 
 }
