@@ -9,9 +9,9 @@ Authors@R: c(person("Kevin", "Shook",
              )                
 Author: Kevin Shook [cre, aut]
 Maintainer: Kevin Shook <kevin.shook@usask.ca>
-Description: Implementation of HGDM. The intent is to estimate discharge depths and connected/contributing fractions. No attempt is made to route flows in time.
+Description: Implementation of HGDM to calculate variable connected/contributing areas and discharge volumes in prairie basins.
 License: AGPL-3 + file LICENSE
-URL: https://github.com/KevinShook/HGDMr
+URL: https://github.com/CentreForHydrology/HGDMr
 Depends: 
     R (>= 4.0.0)
 Imports: 
