@@ -361,7 +361,8 @@ Miscellaneous parameters
 
 The value of **p** for the small depressions (`small_p`) is pretty
 typical for many Canadian Prairie basins. See Shook and Pomeroy (2025)
-for how to derive it.
+for how to derive it. The value of **p** for the large depression is not
+used here, but will be used later.
 
 ```{r}
 small_p <- 1.2
@@ -374,7 +375,7 @@ large_rating <- 1.4
 The function returns a data frame with the time intervals as the
 forcings.
 
-```{r}
+```{r, eval = FALSE}
 simulation <- HGDM(
   upland_area, 
   small_depression_area, 
@@ -398,19 +399,32 @@ simulation <- HGDM(
 
 ### Plotting the simulation results
 
+Plot the basin discharge volume
+
+```{r, eval = FALSE}
+p <- ggplot(simulation, aes(date, total_outflow_volume)) +
+  geom_point()
+p
+```
+![](sim1_outflow_timeseries.png){width="10cm"}
+
 Plot the total connected/contributing fraction over time
 
-```{r}
+```{r, eval = FALSE}
+
 p <- ggplot(simulation, aes(date, total_contrib_frac)) +
   geom_point() +
   ylim(0, 1)
 p
 ```
 
+![](sim1_cf_timeseries.png){width="10cm"}
+
 Plot the small (meta) depression connected/contributing fraction vs the
 depressional storage, as a fraction of the total.
 
-```{r}
+```{r, eval = FALSE}
+
 simulation$small_depression_water_volume_fraction <- 
   simulation$small_depression_water_depth / (max_small_depression_storage / 1000)
 
@@ -427,6 +441,8 @@ p2 <- ggplot(simulation,
 p2
 ```
 
+![](sim1_cf_vf.png){width="10cm"}
+
 ## Example #2 - modelling a basin with a large depressiom
 
 ### Setting parameter values
@@ -435,6 +451,7 @@ In this example the large depression is set near the top of the basin, where it
 collects 25% of the small depression's outputs.
 
 ```{r}
+
 max_large_depression_storage <- 2000
 total_depression_area <- small_depression_area
 large_depression_frac <- 0.3
@@ -449,7 +466,8 @@ upland_fraction_to_outlet <- 0.02
 small_fraction_to_large <- 0.25
 ```
 
-```{r}
+```{r, eval = FALSE}
+
 simulation_large_pond <- HGDM(
   upland_area, 
   small_depression_area, 
@@ -476,13 +494,15 @@ simulation_large_pond <- HGDM(
 
 Plot the total connected/contributing fraction over time
 
-```{r}
+```{r, eval = FALSE}
 p3 <- ggplot(simulation_large_pond, aes(date, total_contrib_frac)) +
   geom_point()
 p3
 ```
 
-```{r}
+![](sim2_cf_timeseries.png){width="10cm"}
+
+```{r, eval = FALSE}
 max_water_volume <- ((max_large_depression_storage / 1000) * 
                        (large_depression_area * 1e6)) + 
   ((max_small_depression_storage / 1000) * (small_depression_area * 1e6))
@@ -502,7 +522,7 @@ p4 <- ggplot(simulation_large_pond,
 p4
 ```
 
-
+![](sim2_cf_vf.png){width="10cm"}
 
 # References
 
