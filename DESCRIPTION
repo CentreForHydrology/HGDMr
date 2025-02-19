@@ -2,15 +2,15 @@ Type: Package
 Package: HGDMr
 Title: Hysteretic and Gatekeeping Depressions Model
 Version: 1.0.0
-Date: 2025-02-18
+Date: 2025-02-19
 Authors@R: c(person("Kevin", "Shook", 
               email = "kevin.shook@usask.ca", 
               role = c("cre", "aut"))
              )                
 Author: Kevin Shook [cre, aut]
 Maintainer: Kevin Shook <kevin.shook@usask.ca>
-Description: Implementation of HGDM to calculate variable connected/contributing areas and discharge volumes in prairie basins.
-License: AGPL-3 + file LICENSE
+Description: Implementation of the Hysteretic and Gatekeeping Depressions Model (HGDM) which calculates variable connected/contributing areas and resulting discharge volumes in prairie basins dominated by depressions ("slough" or "potholes"). The small depressions are combined into a single "meta" depression which explicitly models the hysteresis between the storage of water and the connected/contributing areas of the depressions. The largest (greater than 5% of the total depressional areas) depression (if it exists) is represented separately to model its gatekeeping, i.e. the blocking of upstream flows until it is filled.
+License: GPL-3 + file LICENSE
 URL: https://github.com/CentreForHydrology/HGDMr
 Depends: 
     R (>= 4.0.0)
