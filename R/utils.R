@@ -11,8 +11,9 @@
 #' @export
 #' @importFrom stats approx
 #' @importFrom stats spline
-#' @examples \dontrun{
-#' a <- vol2area_lookup(rating_curve, volume)
+#' @examples {
+#' rating_curve <- data.frame(area=1:10, volume=seq(10, 100, 10))
+#' a <- vol2area_rating(rating_curve, 55)
 #' }
 
 vol2area_rating <- function(rating_curve, volumes, method = "linear"){

@@ -21,8 +21,9 @@ Returns a scalar or vector of lake stages
 Convert depressional storage volume to area
 }
 \examples{
-\dontrun{
-a <- vol2area_lookup(rating_curve, volume)
+{
+rating_curve <- data.frame(area=1:10, volume=seq(10, 100, 10))
+a <- vol2area_rating(rating_curve, 55)
 }
 }
 \author{
